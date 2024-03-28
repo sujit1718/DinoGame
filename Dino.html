@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .game-cont{
+            height: 200px;
+            width: 500px;
+            border: 2px solid black;
+            background-image: url("https://media1.giphy.com/media/ghiMEnnnIE5xe/200w.gif?cid=6c09b9528i2ev2nfwptasudm61mhswknifud5l76a0jjdirq&ep=v1_gifs_search&rid=200w.gif&ct=s");
+            background-size: 30%;
+            background-repeat: repeat-x;
+        }
+        .dino{
+            height: 50px;
+            width: 20px;
+            position: relative;
+            top: 150px;
+            background-image: url("https://i.pinimg.com/originals/86/ec/b4/86ecb4855009dde7431a5d12708ffb17.gif");
+            background-position: center;
+            background-size: 270%;
+        }
+        .jump{
+            animation: jump 0.5s ease-in-out;
+        }
+        @keyframes jump{
+            50%{
+                top:100px;
+            }
+        }
+        .block{
+            height: 20px;
+            width: 20px;
+            background-image: url("https://png.pngtree.com/png-clipart/20210314/original/pngtree-cartoon-cactus-png-image_6095736.jpg");
+            background-position: center;
+            background-size: 150%;
+            position: relative;
+            top: 130px;
+            left: 480px;
+            animation: move 4s linear infinite;
+        }
+        @keyframes move{
+            0%{
+                left: 480px;
+            }
+            100%{
+                left: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-cont">
+        <div class="dino" onclick="addJump()">
+        </div>
+        <div class="block"></div>
+    </div>
+
+    <script>
+        function addJump(){
+            let dino = document.getElementsByClassName("dino")[0];
+            if(dino.getAttribute("class")=="dino")
+            {
+                dino.setAttribute("class", "dino jump");
+                detTimeout(()=>{
+                    dino.setAttribute("class","dino");
+                },1000)
+            }
+        }
+
+        let gameOver = setInterval
+    </script>
+</body>
+</html>
